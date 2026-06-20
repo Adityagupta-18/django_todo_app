@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block pagetitle %}Home{% endblock pagetitle %}
+{% block body %}
+
+{% if success %}
+<div class="alert alert-dismissible fade show rounded-0 text-light bordered border-dark" role="alert" style="background-color:grey;height: 20px;display: flex;align-items: center;">
+  <strong>Note : </strong> Your response has been submitted. click <a href="/tasks" class="text-light mx-1"> here</a> to view all tasks.
+  <button type="button" class="btn-close rounded-0 bg-light" data-bs-dismiss="alert" aria-label="Close" style="padding: 9px;"></button>
+</div>
+{% endif %}
+
+<div class="container bg-secondary rounded-4 px-0" style="padding-top: 3%; padding-bottom: 1%; margin-top: 5%;">
+  <form action="/" method="post">
+    {% csrf_token %}
+    <div class="mx-5 mb-5">
+      <label for="title" class="form-label text-light">Task</label>
+      <input type="text-area" class="form-control py-2" id="title" name="title" placeholder="Enter Your Task">
+    </div>
+    <div class="mx-5">
+      <label for="desc" class="form-label text-light">Description</label>
+      <textarea class="form-control" id="desc" name="desc" rows="5" placeholder="Task Description"></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-secondary mx-5 my-4  btn-outline-light">Submit</button>
+  </form>
+</div>
+
+{% endblock body %}

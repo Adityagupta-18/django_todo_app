@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block pagetitle %}Tasks{% endblock pagetitle %}
+{% block body %}
+<h1 class="text-center mt-5 ">Tasks List</h1>
+<div class="container" style="width: 80vw; display: flex; align-items: center; justify-content: center;">
+<table class="table mt-3 table-secondary table-striped-columns table-bordered border-dark">
+  <thead>
+    <tr>
+      <th scope="col">S No.</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for task in tasks %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{task.tasktitle}}</td>
+      <td>{{task.taskdesc}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+<div style="display:flex; align-items: center; justify-content: center;">
+<a href="/" > Add more </a>
+</div>
+{% endblock body %}

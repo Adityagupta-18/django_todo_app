@@ -1,0 +1,10 @@
+# Python bytecode
+__pycache__/
+
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/

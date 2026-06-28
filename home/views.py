@@ -1,4 +1,4 @@
-from django.shortcuts import render , HttpResponse
+from django.shortcuts import render , HttpResponse ,redirect
 from home.models import Task
 
 # Create your views here.
@@ -18,3 +18,12 @@ def tasks(request):
     alltask=Task.objects.all()
     context={'tasks':alltask}
     return render(request,'tasks.html',context)
+
+def edittask(request,id):
+    task=Task.objects.get(id=id)
+    if request.method=='POST':
+       task.tasktitle = request.POST.get("tasktitle")
+       task.taskdesc = request.POST.get("taskdesc")
+       task.save()
+       return redirect("tasks")
+    return render(request,"edittask.html",{"task":task})

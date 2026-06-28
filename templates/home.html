@@ -9,7 +9,7 @@
 </div>
 {% endif %}
 
-<div class="container bg-secondary rounded-4 px-0" style="padding-top: 3%; padding-bottom: 1%; margin-top: 5%;">
+<div class="container bg-secondary rounded-4 px-0" style="padding-top: 3%; padding-bottom: 0.5%; margin-top: 5%;">
   <form action="/" method="post">
     {% csrf_token %}
     <div class="mx-5 mb-5">
@@ -18,7 +18,7 @@
     </div>
     <div class="mx-5">
       <label for="desc" class="form-label text-light">Description</label>
-      <textarea class="form-control" id="desc" name="desc" rows="5" placeholder="Task Description"></textarea>
+      <textarea class="form-control pb-5" id="desc" name="desc" rows="5" placeholder="Task Description"></textarea>
     </div>
     
     <button type="submit" class="btn btn-secondary mx-5 my-4  btn-outline-light">Submit</button>

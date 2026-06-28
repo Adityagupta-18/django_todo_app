@@ -21,4 +21,5 @@ from home import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('tasks', views.tasks, name='tasks'),
+    path('edit/<int:id>/', views.edittask, name='edittask'),
 ]

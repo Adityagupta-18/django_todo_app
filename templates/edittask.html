@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block pagetitle %}EditTask{% endblock pagetitle %}
+{% block body %}
+
+
+<div class="container bg-secondary rounded-4 px-0" style="padding-top: 3%; padding-bottom: 0.5%; margin-top: 5%;">
+  <form method="post">
+    {% csrf_token %}
+    <div class="mx-5 mb-5">
+      <label for="title" class="form-label text-light">Task</label>
+      <input type="text-area" class="form-control py-2" id="title" name="tasktitle" value="{{task.tasktitle}}">
+    </div>
+    <div class="mx-5">
+      <label for="desc" class="form-label text-light">Description</label>
+      <textarea class="form-control pb-5" id="desc" name="taskdesc" rows="5">{{task.taskdesc}}</textarea>
+    </div>
+    <div style="display: flex;margin-left: 50px;">
+        <button type="submit" class="btn btn-secondary my-4  btn-outline-light">Update</button>
+            <button type="submit" class="btn btn-secondary mx-3 my-4  btn-outline-light">Cancel</button>
+    </div>
+  </form>
+</div>
+
+{% endblock body %}

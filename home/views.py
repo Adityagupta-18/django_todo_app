@@ -1,4 +1,4 @@
-from django.shortcuts import render , HttpResponse ,redirect
+from django.shortcuts import render , HttpResponse ,redirect , get_object_or_404
 from home.models import Task
 
 # Create your views here.
@@ -27,3 +27,8 @@ def edittask(request,id):
        task.save()
        return redirect("tasks")
     return render(request,"edittask.html",{"task":task})
+
+def deltask(request,id):
+    task = get_object_or_404(Task, id=id)
+    task.delete()
+    return redirect("tasks")

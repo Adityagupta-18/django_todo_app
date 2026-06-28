@@ -57,6 +57,7 @@ Search tasks by title or description using the navigation bar.
 A confirmation dialog is displayed before permanently deleting a task.
 
 <img src="screenshots/delete-confirmation.png" alt="delete confirmation" width="600">
+
 ---
 
 

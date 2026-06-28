@@ -29,12 +29,19 @@
           </li>
         </ul>
       </div>
-      <form method="GET" class="form-inline my-2 my-lg-0 d-flex align-items-center justify-content-center">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search Task" aria-label="Search">
+      <form method="GET" action="{% url 'tasks' %}" class="form-inline my-2 my-lg-0 d-flex align-items-center justify-content-center">
+      <input class="form-control mr-sm-2" type="search" name="search" value="{{ request.GET.search }}" placeholder="Search Task" aria-label="Search">
       <button class="btn btn-outline-light my-2 my-sm-0 mx-2" type="submit">Search</button>
     </form>
     </div>
   </nav>
+
+{% if warning %}
+<div class="alert alert-dismissible fade show rounded-0 text-light bordered border-dark" role="alert" style="background-color:grey;height: 20px;display: flex;align-items: center;">
+  <strong>Note : </strong>  No tasks found matching your search.Click<a href="/tasks" class="text-light mx-1"> here</a> to view all tasks.
+  <button type="button" class="btn-close rounded-0 bg-light" data-bs-dismiss="alert" aria-label="Close" style="padding: 9px;"></button>
+</div>
+{% endif %}
 
   {% block body %}
   {% endblock body%}

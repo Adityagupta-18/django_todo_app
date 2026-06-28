@@ -18,6 +18,48 @@ A web-based Todo List application developed using Django and Bootstrap. The appl
 
 ---
 
+# Screenshots
+
+## Home Page
+
+The home page allows users to create a new task by entering a title and description.
+
+<img src="screenshots/home.png" alt="Home Page" width="600">
+
+---
+
+## Tasks Page
+
+Displays all tasks in a responsive table with Edit and Delete actions.
+
+<img src="screenshots/tasks.png" alt="Task Page" width="600">
+
+---
+
+## Edit Task
+
+The edit page automatically loads the selected task, allowing users to update its title and description.
+
+<img src="screenshots/Edit-task.png" alt="Edit task" width="600">
+
+---
+
+## Search Functionality
+
+Search tasks by title or description using the navigation bar.
+
+<img src="screenshots/search.png" alt="search Page" width="600">
+
+---
+
+## Delete Confirmation
+
+A confirmation dialog is displayed before permanently deleting a task.
+
+<img src="screenshots/delete-confirmation.png" alt="delete confirmation" width="600">
+---
+
+
 # Technologies Used
 
 * Python

@@ -2,8 +2,11 @@
 {% block pagetitle %}EditTask{% endblock pagetitle %}
 {% block body %}
 
-
-<div class="container bg-secondary rounded-4 px-0" style="padding-top: 3%; padding-bottom: 0.5%; margin-top: 5%;">
+<h1 class="text-center mt-4 text-muted">Edit Task</h1>
+<p class="text-center text-muted">
+    Update the task title and description, then click <strong>Update</strong> to save your changes.
+</p>
+<div class="container bg-secondary rounded-4 px-0" style="padding-top: 3%; padding-bottom: 0.5%; margin-top: 1%;">
   <form method="post">
     {% csrf_token %}
     <div class="mx-5 mb-5">

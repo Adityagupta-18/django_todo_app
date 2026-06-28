@@ -32,7 +32,7 @@ The home page allows users to create a new task by entering a title and descript
 
 Displays all tasks in a responsive table with Edit and Delete actions.
 
-<img src="screenshots/tasks.png" alt="Task Page" width="600">
+<img src="screenshots/Tasks.png" alt="Task Page" width="600">
 
 ---
 

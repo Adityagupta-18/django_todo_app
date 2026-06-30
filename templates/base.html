@@ -31,10 +31,17 @@
       </div>
       <form method="GET" action="{% url 'tasks' %}" class="form-inline my-2 my-lg-0 d-flex align-items-center justify-content-center">
       <input class="form-control mr-sm-2" type="search" name="search" value="{{ request.GET.search }}" placeholder="Search Task" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0 mx-2" type="submit">Search</button>
+      <button class="btn btn-outline-light my-sm-0 mx-2" type="submit">Search</button>
     </form>
+    {% if request.user.is_authenticated %}
+      <a href="/logout/" class="btn btn-sm btn-danger my-2 my-sm-0 mx-1" type="submit">logout</a>
+      {% else %}
+      <a href="/login/" class="btn btn-sm btn-success my-2 my-sm-0 mx-1" type="submit">login</a>
+      {% endif %}
     </div>
   </nav>
+
+  
 
 {% if warning %}
 <div class="alert alert-dismissible fade show rounded-0 text-light bordered border-dark" role="alert" style="background-color:grey;height: 20px;display: flex;align-items: center;">

@@ -6,11 +6,14 @@ A web-based Todo List application developed using Django and Bootstrap. The appl
 
 # Features
 
+* User registration and authentication
+* Secure login and logout functionality
 * Create new tasks with a title and description
-* View all tasks in a structured table
+* View all personal tasks in a structured table
 * Update existing tasks
 * Delete tasks with a confirmation prompt
 * Search tasks by title and description
+* User-specific task management (each user can access only their own tasks)
 * Display a warning when no matching tasks are found
 * Responsive user interface built with Bootstrap 5
 * Navigation bar for quick access to pages
@@ -25,6 +28,22 @@ A web-based Todo List application developed using Django and Bootstrap. The appl
 The home page allows users to create a new task by entering a title and description.
 
 <img src="screenshots/home.png" alt="Home Page" width="600">
+
+---
+
+## User Registration
+
+Allows new users to create an account by providing their basic information and credentials.
+
+<img src="screenshots/register.png" alt="Register Page" width="600">
+
+---
+
+## User Login
+
+Registered users can securely log in to access and manage their personal tasks.
+
+<img src="screenshots/login.png" alt="Login Page" width="600">
 
 ---
 
@@ -111,6 +130,22 @@ django_todo_app/
 
 # Application Workflow
 
+### User Registration
+
+* New users can create an account by providing their first name, last name, username, and password.
+* Passwords are securely stored using Django's authentication system.
+
+### User Login
+
+* Registered users can log in using their username and password.
+* Authentication is handled using Django's built-in authentication framework.
+* Only authenticated users can create and manage tasks.
+
+### User Logout
+
+* Logged-in users can securely log out of the application.
+* After logout, protected pages require authentication before they can be accessed.
+
 ### Home Page
 
 * Enter a task title.
@@ -119,7 +154,7 @@ django_todo_app/
 
 ### Tasks Page
 
-Displays all tasks with:
+Displays only the tasks belonging to the currently logged-in user with:
 
 * Serial Number
 * Task Title
@@ -159,6 +194,12 @@ Displays all tasks with:
 * CSRF Protection
 * Static Files
 * Bootstrap Integration
+* Django Authentication
+* User Registration and Login
+* User Logout
+* Login Required Decorator
+* User-Based Data Filtering
+* ForeignKey Relationships
 
 ---
 

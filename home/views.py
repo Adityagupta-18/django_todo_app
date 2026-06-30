@@ -1,6 +1,9 @@
 from django.shortcuts import render , HttpResponse ,redirect , get_object_or_404
 from home.models import Task
 from django.db.models import Q
+from django.contrib.auth.models import User
+from django.contrib.auth import login,logout
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -45,3 +48,33 @@ def deltask(request,id):
     task.delete()
     return redirect("tasks")
 
+
+
+def register_page(request):
+    if request.method=='POST':
+        firstname=request.POST.get('firstname')
+        lastname=request.POST.get('lastname')
+        username=request.POST.get('username')
+        password=request.POST.get('passwords')
+
+        user=User.objects.filter(username=username)
+        if user.exists():
+            messages.add_message(request, messages.INFO, "USERNAME ALREADY TAKEN .")
+            return redirect('/register/')
+
+        user=User(
+            first_name=firstname,
+            last_name=lastname,
+            username=username
+        )
+        user.set_password(password)
+        user.save()
+        messages.add_message(request, messages.INFO, "ACCOUNT CREATED SUCCESSFULLY !")
+        return redirect('/register/')
+
+    return render(request,'registerpage.html')
+
+def login_page(request):
+    username=request.POST.get('username')
+    password=request.POST.get('passwords')
+    return render(request,'loginpage.html')

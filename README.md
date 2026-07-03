@@ -32,7 +32,7 @@ A web-based Todo List application developed using Django and Bootstrap. The appl
     </td>
     <td align="center">
       <strong>Tasks Page</strong><br><br>
-      <img src="screenshots/tasks.png" width="450">
+      <img src="screenshots/Tasks.png" width="450">
     </td>
   </tr>
 

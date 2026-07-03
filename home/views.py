@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login , logout 
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -31,6 +32,7 @@ from django.db.models import Q
 @login_required(login_url='/login/')
 def tasks(request):
     warning=False
+    task=Task.objects.all()
     search = request.GET.get('search', '').strip()
     alltask = Task.objects.filter(user=request.user)    
     if search:
@@ -41,7 +43,11 @@ def tasks(request):
         alltask = Task.objects.filter(query).distinct()
         if not alltask.exists():
             warning=True
-    return render(request, 'tasks.html', {'tasks': alltask,'warning':warning})
+
+    paginator = Paginator(task, 5)  # Show 25 contacts per page.
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'tasks.html', {'tasks': page_obj,'warning':warning})
 
 @login_required(login_url='/login/')
 def edittask(request,id):

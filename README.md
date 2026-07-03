@@ -13,6 +13,7 @@ A web-based Todo List application developed using Django and Bootstrap. The appl
 * Update existing tasks
 * Delete tasks with a confirmation prompt
 * Search tasks by title and description
+* Paginated task list for improved navigation and user experience
 * User-specific task management (each user can access only their own tasks)
 * Display a warning when no matching tasks are found
 * Responsive user interface built with Bootstrap 5
@@ -23,62 +24,53 @@ A web-based Todo List application developed using Django and Bootstrap. The appl
 
 # Screenshots
 
-## Home Page
+<table>
+  <tr>
+    <td align="center">
+      <strong>Home Page</strong><br><br>
+      <img src="screenshots/home.png" width="450">
+    </td>
+    <td align="center">
+      <strong>Tasks Page</strong><br><br>
+      <img src="screenshots/tasks.png" width="450">
+    </td>
+  </tr>
 
-The home page allows users to create a new task by entering a title and description.
+  <tr>
+    <td align="center">
+      <strong>Edit Task</strong><br><br>
+      <img src="screenshots/edit-task.png" width="450">
+    </td>
+    <td align="center">
+      <strong>Search Functionality</strong><br><br>
+      <img src="screenshots/search.png" width="450">
+    </td>
+  </tr>
 
-<img src="screenshots/home.png" alt="Home Page" width="600">
+  <tr>
+    <td align="center">
+      <strong>Delete Confirmation</strong><br><br>
+      <img src="screenshots/delete-confirmation.png" width="450">
+    </td>
+    <td align="center">
+      <strong>User Login</strong><br><br>
+      <img src="screenshots/login.png" width="450">
+    </td>
+  </tr>
 
----
-
-## User Registration
-
-Allows new users to create an account by providing their basic information and credentials.
-
-<img src="screenshots/register.png" alt="Register Page" width="600">
-
----
-
-## User Login
-
-Registered users can securely log in to access and manage their personal tasks.
-
-<img src="screenshots/login.png" alt="Login Page" width="600">
-
----
-
-## Tasks Page
-
-Displays all tasks in a responsive table with Edit and Delete actions.
-
-<img src="screenshots/Tasks.png" alt="Task Page" width="600">
-
----
-
-## Edit Task
-
-The edit page automatically loads the selected task, allowing users to update its title and description.
-
-<img src="screenshots/Edit-task.png" alt="Edit task" width="600">
-
----
-
-## Search Functionality
-
-Search tasks by title or description using the navigation bar.
-
-<img src="screenshots/search.png" alt="search Page" width="600">
-
----
-
-## Delete Confirmation
-
-A confirmation dialog is displayed before permanently deleting a task.
-
-<img src="screenshots/delete-confirmation.png" alt="delete confirmation" width="600">
+  <tr>
+    <td align="center">
+      <strong>User Registration</strong><br><br>
+      <img src="screenshots/register.png" width="450">
+    </td>
+    <td align="center">
+      <strong>Pagination</strong><br><br>
+      <img src="screenshots/pagination.png" width="450">
+    </td>
+  </tr>
+</table>
 
 ---
-
 
 # Technologies Used
 
@@ -179,6 +171,11 @@ Displays only the tasks belonging to the currently logged-in user with:
 * Performs case-insensitive searches on both the task title and description.
 * Displays a warning message if no matching tasks are found.
 
+### Pagination
+
+* Tasks are displayed in multiple pages for better readability.
+* Navigate using First, Previous, Next, and Last buttons.
+* The current page number and total number of pages are displayed.
 ---
 
 # Django Concepts Demonstrated
@@ -198,6 +195,7 @@ Displays only the tasks belonging to the currently logged-in user with:
 * User Registration and Login
 * User Logout
 * Login Required Decorator
+* Django Pagination
 * User-Based Data Filtering
 * ForeignKey Relationships
 

@@ -39,7 +39,7 @@ A web-based Todo List application developed using Django and Bootstrap. The appl
   <tr>
     <td align="center">
       <strong>Edit Task</strong><br><br>
-      <img src="screenshots/edit-task.png" width="450">
+      <img src="screenshots/Edit-task.png" width="450">
     </td>
     <td align="center">
       <strong>Search Functionality</strong><br><br>
